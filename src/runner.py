@@ -7,6 +7,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from colorama import Fore, Style, init
 
 # Initialize colorama
@@ -42,12 +44,12 @@ def run():
         return
 
     driver.get('https://play.fizy.com/explore')
-    time.sleep(1)
+    time.sleep(2)
 
     isNewPlaylist = True
     for playlist in data['playlists']:
         print(Fore.GREEN + "Creating a new playlist: " + playlist['name'])
-        
+        playlist_name = playlist['name']
         isNewPlaylist = True
         for item in playlist['items']:
             track = item['track']
@@ -56,30 +58,55 @@ def run():
             if isNewPlaylist:
                 driver.get('https://play.fizy.com/explore')
 
-                before_new_playlist_ahref = driver.find_element(By.XPATH, '/html/body/div[1]/ui-view/main/div/div[2]/div/fizy-nav-search/a')
+                before_new_playlist_ahref = WebDriverWait(driver, 10).until(
+                    EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/ui-view/main/div/div[2]/div/fizy-nav-search/a'))
+                )
                 before_new_playlist_ahref.click()
-                time.sleep(1)
-                search_input = driver.find_element(By.XPATH, '/html/body/div[1]/ui-view/main/div/div[2]/div/ui-view/search/div/div/form/input')
+                time.sleep(3)
+                search_input = WebDriverWait(driver, 10).until(
+                    EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/ui-view/main/div/div[2]/div/ui-view/search/div/div/form/input'))
+                )
                 search_input.send_keys(song_name)
-                new_playlist_before_button = driver.find_element(By.XPATH, '/html/body/div[1]/ui-view/main/div/div[2]/div/ui-view/search/div/search-result/section[1]/div[2]/fizy-slider/div/div[2]/div/div/div[1]/div/div/track-list/track-list-item-album[1]/div/div[5]/span[4]')
+
+                search_button = driver.find_element(By.XPATH, '/html/body/div[1]/ui-view/main/div/div[2]/div/ui-view/search/div/div/form/button')
+                search_button.click()
+                time.sleep(3)
+
+                # Check if the no-search-result image is present
+                no_search_result = driver.find_elements(By.XPATH, '/html/body/div[1]/ui-view/main/div/div[2]/div/ui-view/search/div/no-search-result/img')
+                if no_search_result:
+                    print(Fore.RED + f"Track not found: {song_name}")
+                    continue
+
+                new_playlist_before_button = WebDriverWait(driver, 10).until(
+                    EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/ui-view/main/div/div[2]/div/ui-view/search/div/search-result/section[1]/div[2]/fizy-slider/div/div[2]/div/div/div[1]/div/div/track-list/track-list-item-album[1]/div/div[5]/span[4]'))
+                )
                 new_playlist_before_button.click()
-                time.sleep(1)
+                time.sleep(3)
 
-                new_playlist_button = driver.find_element(By.XPATH, '/html/body/ul/li[1]/ul/li[1]')
+                new_playlist_button = WebDriverWait(driver, 10).until(
+                    EC.presence_of_element_located((By.XPATH, '/html/body/ul/li[1]/ul/li[1]'))
+                )
                 new_playlist_button.click()
-                time.sleep(1)
+                time.sleep(3)
 
-                new_playlist_name_input = driver.find_element(By.XPATH, '/html/body/div[2]/div[2]/div[1]/input')
-                new_playlist_name_input.send_keys(song_name)
+                new_playlist_name_input = WebDriverWait(driver, 10).until(
+                    EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/div[2]/div[1]/input'))
+                )
+                new_playlist_name_input.send_keys(playlist_name)
 
-                new_playlist_create_button = driver.find_element(By.XPATH, '/html/body/div[2]/div[2]/div[2]/button[2]')
+                new_playlist_create_button = WebDriverWait(driver, 10).until(
+                    EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/div[2]/div[2]/button[2]'))
+                )
                 new_playlist_create_button.click()
-                time.sleep(1)
+                time.sleep(3)
                 isNewPlaylist = False
 
                 print(Fore.BLUE + f"Created a new playlist: {song_name}")
             else:
-                search_input = driver.find_element(By.XPATH, '/html/body/div[1]/ui-view/main/div/div[2]/div/ui-view/search/div/div/form/input')
+                search_input = WebDriverWait(driver, 10).until(
+                    EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/ui-view/main/div/div[2]/div/ui-view/search/div/div/form/input'))
+                )
 
                 search_input.clear()
                 search_input.send_keys(song_name)
@@ -89,11 +116,24 @@ def run():
                 search_button.click()
                 time.sleep(2)
 
-                first_album = driver.find_element(By.XPATH, '/html/body/div[1]/ui-view/main/div/div[2]/div/ui-view/search/div/search-result/section[1]/div[2]/fizy-slider/div/div[2]/div/div/div[1]/div/div/track-list/track-list-item-album[1]/div/div[5]/span[4]')
+                # Check if the no-search-result image is present
+                no_search_result = driver.find_elements(By.XPATH, '/html/body/div[1]/ui-view/main/div/div[2]/div/ui-view/search/div/no-search-result/img')
+                if no_search_result:
+                    print(Fore.RED + f"Track not found: {song_name}")
+                    continue
+
+                first_album = WebDriverWait(driver, 10).until(
+                    EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/ui-view/main/div/div[2]/div/ui-view/search/div/search-result/section[1]/div[2]/fizy-slider/div/div[2]/div/div/div[1]/div/div/track-list/track-list-item-album[1]/div/div[5]/span[4]'))
+                )
                 first_album.click()
                 time.sleep(2)
+                first_album_dot = WebDriverWait(driver, 10).until(
+                    EC.presence_of_element_located((By.XPATH, '/html/body/ul/li[1]'))
+                )
 
-                first_album_list = driver.find_element(By.XPATH, '/html/body/ul/li[1]/ul/li[2]')
+                first_album_list = WebDriverWait(driver, 10).until(
+                    EC.presence_of_element_located((By.XPATH, '/html/body/ul/li[1]/ul/li[2]'))
+                )
                 first_album_list.click()
                 time.sleep(1)
             print(Fore.YELLOW + f"Added {track['artistName']} - {track['trackName']} to the playlist to {playlist['name']}")      
