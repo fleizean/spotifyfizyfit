@@ -5,9 +5,10 @@
 
 The **Spotify to Fizy Playlist Sync Bot** is an automation tool designed to integrate Spotify playlists with Fizy. This bot fetches playlist data from Spotify and adds the tracks to corresponding playlists on Fizy. It simplifies the process of transferring music between these two platforms, ensuring your playlists are consistent across both services.
 
-[![MIT License](https://img.shields.io/github/license/fleizean/spotifyfizyfit?color=44CC11&style=flat-square)](https://github.com/fleizean/spotifyfizyfit/blob/master/LICENSE)
-[![PyPI version](https://img.shields.io/pypi/pyversions/spotifyfizyfit?color=%2344CC11&style=flat-square)](https://pypi.org/project/spotifyfizyfit/)
-[![PyPi downloads](https://img.shields.io/pypi/dw/spotifyfizyfit?label=downloads@pypi&color=344CC11&style=flat-square)](https://pypi.org/project/spotifyfizyfit/)
+
+![MIT License](https://img.shields.io/github/license/fleizean/spotifyfizyfit)
+[![PyPI version](https://img.shields.io/pypi/pyversions/spotifyfizyfit)](https://pypi.org/project/spotifyfizyfit/1.0.0/)
+[![PyPi downloads](https://img.shields.io/pypi/dw/spotifyfizyfit?label=downloads@pypi)](https://pypi.org/project/spotifyfizyfit/)
 ![Contributors](https://img.shields.io/github/contributors/fleizean/spotifyfizyfit?style=flat-square)
 
 </div>
