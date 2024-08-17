@@ -34,9 +34,9 @@ The **Spotify to Fizy Playlist Sync Bot** is an automation tool designed to inte
   </details>
 
 ### Specifying JSON File Path
-  During installation, you might need to specify the path to a JSON file. You can do this by setting an environmentvariable or passing the path as an argument to the script. For example:
+  During installation, you might need to specify the path to a JSON file. For example:
 
-  To get started, you need to request your data from Spotify. Please refer to the following document for detailedinstructions:
+  To get started, you need to request your data from Spotify. Please refer to the following document for detailed instructions:
 
   [Spotify Data Collection Guide](md/SpotifyCollectData.md)
     
