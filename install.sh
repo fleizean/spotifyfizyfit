@@ -30,7 +30,7 @@ echo -e "\033[0;32mInstallation complete!\033[0m"
 # Provide example commands to run the script
 echo -e "\033[0;33mYou can run the script using one of the following commands:\033[0m"
 echo -e "\033[0;34m1. pip3 install spotifyfizyfit && spotifyfizyfit --config /path/to/your/config.json\033[0m"
-echo -e "\033[0;34m2. pip3 install dist/spotifyfizyfit.whl && spotifyfizyfit --config /path/to/your/config.json\033[0m"
+echo -e "\033[0;34m2. pip3 install dist/spotifyfizyfit-1.0.3-py3-none-any.whl && spotifyfizyfit --config /path/to/your/config.json\033[0m"
 echo -e "\033[0;34m3. python3 src/runner.py --config /path/to/your/config.json\033[0m"
 
 # Prompt user to select an option
@@ -46,7 +46,7 @@ case "$choice" in
         echo -e "\033[0;32mExample command: pip3 install spotifyfizyfit && spotifyfizyfit --config /path/to/your/spotify-playlist-config.json\033[0m"
         ;;
     "2")
-        echo -e "\033[0;32mExample command: pip3 install dist/spotifyfizyfit.whl --force-reinstall && spotifyfizyfit --config /path/to/your/spotify-playlist-config.json\033[0m"
+        echo -e "\033[0;32mExample command: pip3 install dist/spotifyfizyfit-1.0.3-py3-none-any.whl --force-reinstall && spotifyfizyfit --config /path/to/your/spotify-playlist-config.json\033[0m"
         ;;
     "3")
         echo -e "\033[0;32mExample command: python3 src/runner.py --config /path/to/your/spotify-playlist-config.json\033[0m"
