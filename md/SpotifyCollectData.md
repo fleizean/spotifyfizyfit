@@ -20,4 +20,7 @@ To integrate your Spotify playlists with Fizy, you need to request your data fro
 6. **Place the JSON File:**
    - Place the `Playlist1.json` file in a directory of your choice. You will need to provide the path to this file when running the `spotifyfizyfit` script.
 
+7. **Example for JSON File:**
+   - If you need to manually create the JSON file, please refer to the example JSON file located at [others/example.json](others/example.json). Here is a sample structure for your reference:
+
 That's it! You now have the necessary data to integrate your Spotify playlists with Fizy.

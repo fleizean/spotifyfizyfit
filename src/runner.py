@@ -11,6 +11,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from colorama import Fore, Style, init
 
+
 # Initialize colorama
 def run():
     init(autoreset=True)
@@ -179,3 +180,5 @@ def run():
             time.sleep(2)
 
     driver.quit()
+
+run()

@@ -1,0 +1,112 @@
+{
+  "playlists": [
+    {
+      "name": "coding",
+      "lastModifiedDate": "2024-07-13",
+      "items": [
+        {
+          "track": {
+            "trackName": "Disfruto",
+            "artistName": "Carla Morrison"
+          }
+        },
+        {
+          "track": {
+            "trackName": "Coming Home",
+            "artistName": "Moxura"
+          }
+        },
+        {
+          "track": {
+            "trackName": "ilomilo",
+            "artistName": "Billie Eilish"
+          }
+        },
+        {
+          "track": {
+            "trackName": "K.",
+            "artistName": "Cigarettes After Sex"
+          }
+        },
+        {
+          "track": {
+            "trackName": "Apocalypse",
+            "artistName": "Cigarettes After Sex"
+          }
+        },
+        {
+          "track": {
+            "trackName": "Sunsetz",
+            "artistName": "Cigarettes After Sex"
+          }
+        },
+        {
+          "track": {
+            "trackName": "Raf",
+            "artistName": "Deeperise"
+          }
+        },
+        {
+          "track": {
+            "trackName": "Jazzcat",
+            "artistName": "Karsu"
+          }
+        }
+      ]
+    },
+    {
+      "name": "example-playlist2",
+      "lastModifiedDate": "2024-07-13",
+      "items": [
+        {
+          "track": {
+            "trackName": "Shape of You",
+            "artistName": "Ed Sheeran"
+          }
+        },
+        {
+          "track": {
+            "trackName": "Blinding Lights",
+            "artistName": "The Weeknd"
+          }
+        },
+        {
+          "track": {
+            "trackName": "Levitating",
+            "artistName": "Dua Lipa"
+          }
+        },
+        {
+          "track": {
+            "trackName": "Peaches",
+            "artistName": "Justin Bieber"
+          }
+        },
+        {
+          "track": {
+            "trackName": "Save Your Tears",
+            "artistName": "The Weeknd"
+          }
+        },
+        {
+          "track": {
+            "trackName": "Good 4 U",
+            "artistName": "Olivia Rodrigo"
+          }
+        },
+        {
+          "track": {
+            "trackName": "Stay",
+            "artistName": "The Kid LAROI"
+          }
+        },
+        {
+          "track": {
+            "trackName": "Montero (Call Me By Your Name)",
+            "artistName": "Lil Nas X"
+          }
+        }
+      ]
+    }
+  ]
+}
