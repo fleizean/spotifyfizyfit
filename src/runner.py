@@ -104,7 +104,11 @@ def run():
                     )
                     new_playlist_before_button.click()
                     time.sleep(3)
-    
+                    first_album_dot = WebDriverWait(driver, 10).until(
+                        EC.presence_of_element_located((By.XPATH, '/html/body/ul/li[1]'))
+                    )
+                    first_album_dot.click()
+                    time.sleep(1)
                     new_playlist_button = WebDriverWait(driver, 10).until(
                         EC.presence_of_element_located((By.XPATH, '/html/body/ul/li[1]/ul/li[1]'))
                     )
