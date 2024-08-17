@@ -43,21 +43,19 @@ def run():
         driver.quit()
         return
 
-    driver.get('https://play.fizy.com/my-music/')
-    time.sleep(2)
-
     isNewPlaylist = True
     isHeaderMusic = False
     isNoSearchResult = False
     for playlist in data['playlists']:
-        
+        driver.get('https://play.fizy.com/my-music/')
+        time.sleep(2)
         playlist_name = playlist['name']
         view_exists_playlist = WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/ui-view/main/div/div[2]/div/ui-view/ui-view/my-music/div/div[3]/my-playlists/div/div[1]/playlist-card/list-card/div/div[2]/a[1]'))
         )
         playlist_value = view_exists_playlist.text.strip()
         time.sleep(2)
-        print(Fore.RED + f"Playlist name: {playlist_name}" + Fore.GREEN + f"Playlist value: {playlist_value}")
+        print(Fore.RED + f"Playlist name: {playlist_name}" + Fore.GREEN + f" Your First Playlist value: {playlist_value}")
 
         if playlist_value == playlist_name:
             print(Fore.RED + f"Playlist already exists: {playlist_name}")
