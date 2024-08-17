@@ -74,6 +74,7 @@ def run():
                 search_input = WebDriverWait(driver, 10).until(
                     EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/ui-view/main/div/div[2]/div/ui-view/search/div/div/form/input'))
                 )
+                search_input.clear()
                 search_input.send_keys(song_name)
                 
                 search_button = driver.find_element(By.XPATH, '/html/body/div[1]/ui-view/main/div/div[2]/div/ui-view/search/div/div/form/button')
